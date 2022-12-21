@@ -1,0 +1,67 @@
+.TH man simple_shell "December 15, 2022"  "version 1.0"
+
+
+.SH NAME
+.B Simple Shell (hsh)
+ - command interpreter (shell)
+
+
+.SH SYNOPSIS
+.PP
+.B ./hsh
+
+
+.PP
+.B
+.SH DESCRIPTION
+This program simulates a command interpreter based in Unix and GNU/LINUX with its basic commands.
+The Simple Shell is a command line interpreter that reads lines from the terminan \ , and executes them, and generally executes other commands.
+It also has features to aid interactive use and has the advantage that the interpretative language is common to both interactive.
+
+.PP
+.SH EXAMPLE:
+.B The intercative mode :
+$ ./hsh
+
+.B The not intercative mode :
+echo "/bin/ls" | ./hsh
+
+.SH FEATURES
+
+* This program displays a prompt and wait for the user to type a command. A command line always ends with a new line (when user push ENTER key).
+
+* The prompt is displayed again each time a command has been executed.
+
+* When the user enters exit, Hell shell will end and returns the status 0.
+
+* The user could stop the program using Ctrl+D (end of file).
+
+* The shell handles command lines with arguments and pathways.
+
+* The program does not quit when the user inputs ^C (Ctrl+C).
+
+* The program prints the current enviroment when the user types env.
+
+* This program executes the most common shell commands as ls, grep, find, pwd, rm, cp, mv, exit, env, history, etc... with arguments.
+
+* If an executable cannot be found, It prints an error message and display the prompt again
+
+* This shell does NOT support pipes |, shell logical operators as && or ||, neither commands separator ;.
+
+
+.PP
+.B Simple Shell has two built in commands: \
+
+.PP 
+env - Displays all the environment variables with their values
+
+.PP
+exit - To logout of the shell.
+
+.SH BUGS
+No known bugs at this time.
+
+
+.SH AUTHOR(S)
+
+Milton Obed Rayo - Maria Jose Murillo R.
