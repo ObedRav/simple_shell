@@ -1,8 +1,7 @@
 #include "shell.h"
 
-
 /**
- * _getenv - gets the value of the global variable => 'PATH': /bin/game/:/bin:/;
+ * _getenv - gets the value of the global variable
  * @name: name of the global variable
  * Return: string of value
  */
