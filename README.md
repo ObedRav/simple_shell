@@ -70,9 +70,9 @@ To exit the program, run:
 
 | Function Name | Description |
 |---------------- | -----------|
-|[]()    | Exit the shell.|
+|[fun_main]()    | Exit the shell.|
 |[]() | Prints the current environment.|
-|[]() | Stores whatever is passed to it as standard input. |
+|[pat]() | Stores whatever is passed to it as standard input. |
 
 
 
