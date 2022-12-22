@@ -71,12 +71,12 @@ To exit the program, run:
 
 | Function Name | Description |
 |---------------- | -----------|
-|[fun_main]()    | Exit the shell.|
-|[]() | Prints the current environment.|
-|[pat]() | Stores whatever is passed to it as standard input. |
-
-
-
+|[shell.h]()    | Exit the shell.|
+|[main.c]() | Prints the current environment.|
+|[buildin.c]() | Stores whatever is passed to it as standard input. |
+|[path.c]() | Stores whatever is passed to it as standard input. |
+|[exec_line.c]() | Stores whatever is passed to it as standard input. |
+|[strings.c]() | Stores whatever is passed to it as standard input. |
 
 ## Modes
 The user can have the experience in an interactive and non-interactive way.
