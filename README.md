@@ -74,12 +74,12 @@ To exit the program, run:
 | Function Name | Description |
 |---------------- | -----------|
 |[README.md](https://github.com/ObedRav/holbertonschool-simple_shell/edit/main/README.md#-holberton-school-) | Current file, contains information about this project. |
-|[shell.h](https://github.com/ObedRav/holbertonschool-simple_shell/blob/main/shell.h)    | Declaration of all functions to be used in the shell, as well as libriaries|
-|[shell.c]() | Prints the current environment.|
-|[buildin.c]() | Stores whatever is passed to it as standard input. |
-|[path.c]() | Stores whatever is passed to it as standard input. |
-|[exec_line.c]() | Stores whatever is passed to it as standard input. |
-|[strings.c]() | Stores whatever is passed to it as standard input. |
+|[shell.h](./shell.h)    | Declaration of all functions to be used in the shell, as well as libriaries|
+|[shell.c](./shell.c) | Prints the current environment.|
+|[buildin.c](./buildin.c) | Stores whatever is passed to it as standard input. |
+|[path.c](,/path.c) | Stores whatever is passed to it as standard input. |
+|[exec_line.c](./exec_line.c) | Stores whatever is passed to it as standard input. |
+|[strings.c](,/strings.c) | Stores whatever is passed to it as standard input. |
 
 ## Modes
 The user can have the experience in an interactive and non-interactive way.
