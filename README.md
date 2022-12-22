@@ -73,7 +73,6 @@ To exit the program, run:
 
 | Function Name | Description |
 |---------------- | -----------|
-|[README.md](https://github.com/ObedRav/holbertonschool-simple_shell/edit/main/README.md#-holberton-school-) | Current file, contains information about this project. |
 |[shell.h](./shell.h)    | Declaration of all functions to be used in the shell, as well as libriaries|
 |[shell.c](./shell.c) | Prints the current environment.|
 |[buildin.c](./buildin.c) | Stores whatever is passed to it as standard input. |
