@@ -1,5 +1,7 @@
-# <FONT COLOR="red"> **Holberton School**</FONT> 
-![alt text](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/235/shell.jpeg)
+# Holberton School
+
+<p align="center">
+ <img src= "https://s3.eu-west-3.amazonaws.com/hbtn.intranet.project.files/holbertonschool-low_level_programming/235/shell.jpeg" width="400" height="400" />
 
 # Simple Shell :robot:
 
@@ -71,7 +73,8 @@ To exit the program, run:
 
 | Function Name | Description |
 |---------------- | -----------|
-|[shell.h]()    | Exit the shell.|
+|[README.md](https://github.com/ObedRav/holbertonschool-simple_shell/edit/main/README.md#-holberton-school-) | Current file, contains information about this project. |
+|[shell.h](https://github.com/ObedRav/holbertonschool-simple_shell/blob/main/shell.h)    | Declaration of all functions to be used in the shell, as well as libriaries|
 |[main.c]() | Prints the current environment.|
 |[buildin.c]() | Stores whatever is passed to it as standard input. |
 |[path.c]() | Stores whatever is passed to it as standard input. |
