@@ -14,7 +14,7 @@ It is a UNIX command language interpreter, which reads commands from interactive
 
 ## Requeriments
 
-* Programs and functions will be compiled with ```gcc 4.8.4``` using the flags ```-Wall``` ```-Werror``` ```-Wextra``` ```and -pedantic```
+* Programs and functions will be compiled with ```gcc``` using the flags ```-Wall``` ```-Werror``` ```-Wextra``` ```-pedantic``` and ```-std=gnu89```
 * All files should end with a new line
 * No more than 5 functions per file
 * Operating System: [Ubuntu 20.04 LTS](http://releases.ubuntu.com/20.04/)
