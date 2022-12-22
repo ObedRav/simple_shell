@@ -9,7 +9,7 @@
 This repository contains the files to simulate a basic Unix Shell with its respective commands.
 
 ## Description
-This repository contains the executable files to simulate a simple Unix shell with its respective basic commands as well as some advanced ones developed by the contributors. Each functionality of the file will be commented, as well as each line of the function where its compression is not so clear to the naked eye.
+This repository contains the executable files to simulate a simple Unix shell with its respective basic commands as well as some advanced ones developed by the contributors. Each functionality of the file will be commented, as well as each line of the function where its compression is not so clear to the naked eye. <br>
 In the Shell you can interact both in interactive and non-interactive mode (explanation and examples in [Modes](https://github.com/ObedRav/holbertonschool-simple_shell/edit/main/README.md#modes).
 
 
