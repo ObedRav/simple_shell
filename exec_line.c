@@ -8,40 +8,40 @@
  */
 char **splitstring(char *str, const char *delim)
 {
-	int i, wn;
+	int i, wn; /* declared variables */
 	char **array;
 	char *token;
 	char *copy;
 
-	copy = malloc(_strlen(str) + 1);
+	copy = malloc(_strlen(str) + 1); /* allocate the space in memory of the string received */
 	if (copy == NULL)
 	{
 		perror(_getenv("_"));
 		return (NULL);
 	}
 	i = 0;
-	while (str[i])
+	while (str[i]) /* Copy the string received into anothe variable */
 	{
 		copy[i] = str[i];
 		i++;
 	}
 	copy[i] = '\0';
 
-	token = strtok(copy, delim);
-	array = malloc((sizeof(char *) * 2));
-	array[0] = _strdup(token);
+	token = strtok(copy, delim); /* Use the strtok to tokenize the string */
+	array = malloc((sizeof(char *) * 2)); /* Allocate memory for the array */
+	array[0] = _strdup(token); /* Copy the pointer of token into array */
 
 	i = 1;
 	wn = 3;
-	while (token)
+	while (token) /* Start the loop while token exits */
 	{
-		token = strtok(NULL, delim);
+		token = strtok(NULL, delim); /* Skip to the next token */
 		array = _realloc(array, (sizeof(char *) * (wn - 1)), (sizeof(char *) * wn));
-		array[i] = _strdup(token);
+		array[i] = _strdup(token); /* Copy the pointer of token into array */
 		i++;
 		wn++;
 	}
-	free(copy);
+	free(copy); /* Free allocated memory */
 	return (array);
 }
 
@@ -52,7 +52,6 @@ char **splitstring(char *str, const char *delim)
  * @new_size: new size for our pointer
  * Return: New resized Pointer
  */
-
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	char *new;
