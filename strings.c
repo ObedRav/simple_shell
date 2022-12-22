@@ -93,21 +93,16 @@ int _strlen(char *s)
 }
 
 /**
- * _puts - prints every other character of a string, starting with the first
- *         character, followed by a new line.
+ * _puts - prints a string
  * @str: String
  */
 void _puts(char *str)
 {
-	int i, length;
+	int i = 0;
 
-	length = _strlen(str);
-	for (i = 0; i <= (length - 1); i++)
+	while (str[i])
 	{
-		if ((i % 2) == 0)
-		{
-			_putchar(str[i]);
-		}
+		_putchar(str[i]);
+		i++;
 	}
-	_putchar('\n');
 }

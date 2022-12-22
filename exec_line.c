@@ -13,8 +13,8 @@ char **splitstring(char *str, const char *delim)
 	char *token;
 	char *copy;
 
-	copy = malloc(_strlen(str) + 1); /* allocate the space in memory of the string received */
-	if (copy == NULL)
+	copy = malloc(_strlen(str) + 1); /* allocate the space in */
+	if (copy == NULL)					/*memory of the string received */
 	{
 		perror(_getenv("_"));
 		return (NULL);
@@ -100,19 +100,19 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 void execute(char **argv)
 {
 
-	int d, status;
+	int d, status; /* declared variables */
 
 	if (!argv || !argv[0])
 		return;
-	d = fork();
-	if (d == -1)
+	d = fork(); /* fork the process */
+	if (d == -1) /* if the fork failed error*/
 	{
 		perror(_getenv("_"));
 	}
-	if (d == 0)
+	if (d == 0) /* if the fork succeeded execute the command */
 	{
-		execve(argv[0], argv, environ);
-			perror(argv[0]);
+		execve(argv[0], argv, environ); /* replace the child process */
+		perror(argv[0]); /* if the execve failed error and exit*/
 		exit(EXIT_FAILURE);
 	}
 	wait(&status);

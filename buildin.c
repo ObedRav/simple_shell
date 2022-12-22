@@ -33,19 +33,19 @@ int _atoi(char *s)
  */
 void exitt(char **arv)
 {
-	int i, n;
+	int i, n; /* declared variables */
 
-	if (arv[1])
+	if (arv[1]) /* check if the user entered the status of exit */
 	{
 		n = _atoi(arv[1]);
 		if (n <= -1)
 			n = 2;
 		freearv(arv);
-		exit(n);
+		exit(n); /* exit with this exact status */
 	}
 	for (i = 0; arv[i]; i++)
 		free(arv[i]);
-	free(arv);
+	free(arv); /* free memory */
 	exit(0);
 }
 
@@ -56,23 +56,23 @@ void exitt(char **arv)
 */
 void(*checkbuild(char **arv))(char **arv)
 {
-	int i, j;
-	mybuild T[] = {
+	int i, j; /* declared variables */
+	mybuild T[] = { /* structure of buildings */
 		{"exit", exitt},
 		{NULL, NULL}
 	};
 
-	for (i = 0; T[i].name; i++)
+	for (i = 0; T[i].name; i++) /* loop through the structure */
 	{
 		j = 0;
-		if (T[i].name[j] == arv[0][j])
+		if (T[i].name[j] == arv[0][j]) /* check the first digit */
 		{
-			for (j = 0; arv[0][j]; j++)
+			for (j = 0; arv[0][j]; j++) /* loop through the input */
 			{
-				if (T[i].name[j] != arv[0][j])
-					break;
+				if (T[i].name[j] != arv[0][j]) /* if the digit are different */
+					break;						/* break out of loop */
 			}
-			if (!arv[0][j])
+			if (!arv[0][j])	/* if the last digit is '\0' */
 				return (T[i].func);
 		}
 	}

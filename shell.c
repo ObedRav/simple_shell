@@ -20,9 +20,8 @@ void _EOF(int len, char *buff)
 }
 
 /**
- * _isatty - verif if terminal
+ * _isatty - verif if is interactive
  */
-
 void _isatty(void)
 {
 	if (isatty(STDIN_FILENO))
@@ -37,7 +36,7 @@ void sig_handler(int sig_num)
 {
 	if (sig_num == SIGINT)
 	{
-		printf("\n$ ");
+		_puts("\n$ ");
 	}
 }
 
@@ -51,7 +50,7 @@ int main(void)
 	char *string = NULL, *value, *pathname, **arv;
 	size_t size = 0;
 	list_path *head = '\0';
-	void (*f)(char **);
+	void (*f)(char **); /* Declare the store of the func*/
 
 	signal(SIGINT, sig_handler); /*Signal be sure tat the user press the ctrl+c*/
 	while (bytes_read != EOF) /*Starting the infinitive loop*/
