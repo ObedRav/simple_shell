@@ -1,6 +1,9 @@
 #ifndef SHELL_H
 #define SHELL_H
 
+/**
+ * Libraries
+ */ 
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -12,6 +15,9 @@
 #include <sys/stat.h>
 #include <signal.h>
 
+/**
+ * The global variable environment
+ */ 
 extern char **environ;
 
 /**
@@ -36,6 +42,9 @@ typedef struct mybuild
 	void (*func)(char **);
 } mybuild;
 
+/**
+ * Functions
+ */ 
 void sig_handler(int sig_num);
 int _strlen(char *s);
 void _puts(char *str);
