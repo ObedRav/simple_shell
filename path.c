@@ -7,24 +7,24 @@
  */
 char *_getenv(const char *name)
 {
-	int i, j;
+	int i, j; /* declared variables */
 	char *value;
 
 	if (!name)
 		return (NULL);
-	for (i = 0; environ[i]; i++)
+	for (i = 0; environ[i]; i++) /* loop through the environment variable */
 	{
 		j = 0;
-		if (name[j] == environ[i][j])
+		if (name[j] == environ[i][j]) /* check the first digit */
 		{
 			while (name[j])
 			{
-				if (name[j] != environ[i][j])
+				if (name[j] != environ[i][j]) /* if the digits are different */
 					break;
 
 				j++;
 			}
-			if (name[j] == '\0')
+			if (name[j] == '\0') /* if the digits are equals */
 			{
 				value = (environ[i] + j + 1);
 				return (value);
@@ -84,15 +84,15 @@ list_path *add_node_end(list_path **head, char *str)
  */
 list_path *linkpath(char *path)
 {
-	list_path *head = '\0';
+	list_path *head = '\0'; /* declared variables */
 	char *token;
-	char *cpath = _strdup(path);
+	char *cpath = _strdup(path); /* copy the path */
 
-	token = strtok(cpath, ":");
+	token = strtok(cpath, ":"); /* divide the path in tokens */
 	while (token)
 	{
-		head = add_node_end(&head, token);
-		token = strtok(NULL, ":");
+		head = add_node_end(&head, token); /* assign the path */
+		token = strtok(NULL, ":"); /* next token */
 	}
 
 	return (head);
@@ -106,21 +106,25 @@ list_path *linkpath(char *path)
  */
 char *_which(char *filename, list_path *head)
 {
+	/* declared variables */
 	struct stat st;
 	char *string;
 
-	list_path *tmp = head;
+	list_path *tmp = head; /* create a copy of head */
 
-	while (tmp)
+	while (tmp) /* loop through list of paths */
 	{
 
-		string = concat_all(tmp->dir, "/", filename);
+		string = concat_all(tmp->dir, "/", filename); /* possible executables */
 		if (stat(string, &st) == 0)
+		/* The stat() function shall continue pathname */
+		/* resolution using the contents of string, and shall return */
+		/* information pertaining to the resulting file if the file exists */
 		{
 			return (string);
 		}
 		free(string);
-		tmp = tmp->p;
+		tmp = tmp->p; /* next node */
 	}
 
 	return (NULL);
