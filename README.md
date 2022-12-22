@@ -57,9 +57,9 @@ Below you can see the flowchart, which was taken as a starting point to carry ou
 
 
 ## Usage :computer:
-All the files are to be compiled on an Ubuntu 14.04 LTS machine with:
+All the files are to be compiled on an Ubuntu 20.04 LTS machine with:
 ```
-gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89
 ```
 
 Once compiled, to start the program, run:
