@@ -77,9 +77,9 @@ To exit the program, run:
 |[shell.h](./shell.h)    | Declaration of all functions to be used in the shell, as well as libriaries|
 |[shell.c](./shell.c) | Prints the current environment.|
 |[buildin.c](./buildin.c) | Stores whatever is passed to it as standard input. |
-|[path.c](,/path.c) | Stores whatever is passed to it as standard input. |
+|[path.c](./path.c) | Stores whatever is passed to it as standard input. |
 |[exec_line.c](./exec_line.c) | Stores whatever is passed to it as standard input. |
-|[strings.c](,/strings.c) | Stores whatever is passed to it as standard input. |
+|[strings.c](./strings.c) | Stores whatever is passed to it as standard input. |
 
 ## Modes
 The user can have the experience in an interactive and non-interactive way.
