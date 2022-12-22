@@ -74,8 +74,8 @@ To exit the program, run:
 | Function Name | Description |
 |---------------- | -----------|
 |[shell.h](./shell.h)    | Declaration of all functions to be used in the shell, as well as libriaries|
-|[shell.c](./shell.c) | Prints the current environment.|
-|[buildin.c](./buildin.c) | Stores whatever is passed to it as standard input. |
+|[shell.c](./shell.c) | Principal function|
+|[buildin.c](./buildin.c) |  |
 |[path.c](./path.c) | Stores whatever is passed to it as standard input. |
 |[exec_line.c](./exec_line.c) | Stores whatever is passed to it as standard input. |
 |[strings.c](./strings.c) | Stores whatever is passed to it as standard input. |
