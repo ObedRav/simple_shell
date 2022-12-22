@@ -18,7 +18,7 @@ It is a UNIX command language interpreter, which reads commands from interactive
 * All files should end with a new line
 * No more than 5 functions per file
 * Operating System: [Ubuntu 20.04 LTS](http://releases.ubuntu.com/20.04/)
-* Compiler: [GCC 4.8.4](https://gcc.gnu.org/gcc-4.8/)
+* Compiler: [GCC](https://gcc.gnu.org)
 * Authorized functions and system calls:
   * ```access``` (```man 2 access```)
   * ```chdir``` (```man 2 chdir```)
