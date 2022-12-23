@@ -75,8 +75,7 @@ int main(void)
 			execute(arv);
 		}
 		else
-			free(arv);
-
+			freearv(arv);
 	}
 	return (0);
 }
