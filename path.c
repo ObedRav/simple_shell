@@ -92,7 +92,6 @@ list_path *linkpath(char *path)
 		head = add_node_end(&head, token); /* assign the path */
 		token = strtok(NULL, ":"); /* next token */
 	}
-
 	return (head);
 }
 

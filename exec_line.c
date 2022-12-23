@@ -60,7 +60,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 	block = malloc(nmemb * size);
-	if (block != NULL)
+	if (block)
 	{
 		for (i = 0; i < (nmemb * size); i++)
 			block[i] = 0;
@@ -136,7 +136,7 @@ void execute(char **argv)
 	if (d == 0) /* if the fork succeeded execute the command */
 	{
 		execve(argv[0], argv, environ); /* replace the child process */
-		perror(argv[0]); /* if the execve failed error and exit*/
+			perror(argv[0]); /* if the execve failed error and exit*/
 		exit(EXIT_FAILURE);
 	}
 	freearv(argv); /*Free the array of input from user*/

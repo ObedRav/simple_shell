@@ -55,8 +55,8 @@ int main(void)
 		_isatty(); /*Check if the input is interative or not interative*/
 		bytes_read = getline(&string, &size, stdin); /*Read the line from user*/
 		_EOF(bytes_read, string); /*If an error occured the program finish*/
-		arv = splitstring(string, " \n");
-		free(string); /*Free the input from user*/ /*Split the string into an array*/
+		arv = splitstring(string, " \n"); /*Split the string into an array*/
+		free(string);
 		if (!arv || !arv[0])
 			execute(arv); /*Execute the args and return an error*/
 		else
@@ -66,11 +66,8 @@ int main(void)
 			pathname = _which(arv[0], head); /*Search if the command exits in paths*/
 			free_list(head); /*Free the linked list*/
 			f = checkbuild(arv); /*Check if the command is an buildin*/
-			if (f) /*If the command is an buildin free the input*/
-			{		/*from user and run the buildin*/
-				free(string);
-				f(arv);
-			}
+			if (f) /*If the command is an buildin free the input*/	
+				f(arv); /*from user and run the buildin*/
 			else if (!pathname) /*If the _which don't found the executable*/
 				execute(arv);	/*in the paths, execute the command*/
 			else if (pathname) /*If the _which find the executable in the paths, */
