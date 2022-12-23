@@ -3,7 +3,7 @@
 
 /**
  * Libraries
- */ 
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -17,7 +17,7 @@
 
 /**
  * The global variable environment
- */ 
+ */
 extern char **environ;
 
 /**
@@ -44,7 +44,7 @@ typedef struct mybuild
 
 /**
  * Functions
- */ 
+ */
 void sig_handler(int sig_num);
 int _strlen(char *s);
 void _puts(char *str);
