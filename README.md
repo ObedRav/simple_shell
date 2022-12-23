@@ -9,7 +9,8 @@
 This repository contains the files to simulate a basic Unix Shell with its respective commands.
 
 ## Description
-It is a UNIX command language interpreter, which reads commands from interactive mode and non-interactive mode.
+This repository contains the executable files to simulate a simple Unix shell with its respective basic commands as well as some advanced ones developed by the contributors. Each functionality of the file will be commented, as well as each line of the function where its compression is not so clear to the naked eye. <br>
+In the Shell you can interact both in interactive and non-interactive mode (explanation and examples in [Modes](https://github.com/ObedRav/holbertonschool-simple_shell/blob/main/README.md#modes).
 
 
 ## Requeriments
@@ -69,16 +70,16 @@ To exit the program, run:
 ```$ exit```
 
 
-## List of functions
+## List of Files
 
 | Function Name | Description |
 |---------------- | -----------|
-|[shell.h](./shell.h)    | Declaration of all functions to be used in the shell, as well as libriaries|
-|[shell.c](./shell.c) | Principal function|
-|[buildin.c](./buildin.c) |  |
-|[path.c](./path.c) | Stores whatever is passed to it as standard input. |
-|[exec_line.c](./exec_line.c) | Stores whatever is passed to it as standard input. |
-|[strings.c](./strings.c) | Stores whatever is passed to it as standard input. |
+|[shell.h](https://github.com/ObedRav/holbertonschool-simple_shell/blob/main/shell.h)    | Declaration of all functions to be used in the shell, as well as libriaries|
+|[shell.c](https://github.com/ObedRav/holbertonschool-simple_shell/blob/main/shell.c) | Principal function|
+|[buildin.c](https://github.com/ObedRav/holbertonschool-simple_shell/blob/main/buildin.c) | Contains exit function, string to integer converter and buildin checker |
+|[path.c](https://github.com/ObedRav/holbertonschool-simple_shell/blob/main/path.c) |Contains the functions of: global variable value, adds a new node to the end of a list, creates a linked list for path directories, and finds the path of a file name.  |
+|[exec_line.c](https://github.com/ObedRav/holbertonschool-simple_shell/blob/main/exec_line.c) | Contains the functions of: splitting a string by converting it to an array, reallocating the block of memory, executing a command, and freeing the array of pointers|
+|[strings.c](https://github.com/ObedRav/holbertonschool-simple_shell/blob/main/strings.c) | Contains the functions to: return a pointer in memory, concatenate three strings, write the character to standard output, count chars and print a string.|
 
 ## Modes
 The user can have the experience in an interactive and non-interactive way.
