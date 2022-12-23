@@ -31,8 +31,8 @@ char **splitstring(char *str, const char *delim)
 	array = _calloc((sizeof(char *)), 2); /* Allocate memory for the array */
 	array[0] = _strdup(token); /* Copy the pointer of token into array */
 
-	i = 1;
-	wn = 3;
+	i = 1; /* index */
+	wn = 3; /* variable to reallocate the memory */
 	while (token) /* Start the loop while token exits */
 	{
 		token = strtok(NULL, delim); /* Skip to the next token */
@@ -124,7 +124,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
  */
 void execute(char **argv)
 {
-
 	int d = 0, status; /* declared variables */
 
 	if (!argv || !argv[0])

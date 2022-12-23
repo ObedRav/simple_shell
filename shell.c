@@ -50,7 +50,7 @@ int main(void)
 	void (*f)(char **); /* Declare the store of the func*/
 
 	signal(SIGINT, sig_handler); /*Signal be sure tat the user press the ctrl+c*/
-	while (bytes_read != EOF) /*Starting the infinitive loop*/
+	while (1) /*Starting the infinitive loop*/
 	{
 		_isatty(); /*Check if the input is interative or not interative*/
 		bytes_read = getline(&string, &size, stdin); /*Read the line from user*/
