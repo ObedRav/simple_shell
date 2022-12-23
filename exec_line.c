@@ -14,12 +14,11 @@ char **splitstring(char *str, const char *delim)
 	char *copy = NULL;
 
 	copy = _calloc((_strlen(str) + 1), 1); /* allocate the space in */
-	if (copy == NULL)					/*memory of the string received */
+	if (!copy)					/*memory of the string received */
 	{
 		perror(_getenv("_"));
 		return (NULL);
 	}
-	i = 0;
 	while (str[i]) /* Copy the string received into anothe variable */
 	{
 		copy[i] = str[i];
@@ -84,13 +83,13 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 	unsigned int i;
 
-	if (ptr == NULL)
+	if (!ptr)
 		return (_calloc(new_size, 1));
 
 	if (new_size == old_size)
 		return (ptr);
 
-	if (new_size == 0 && ptr != NULL)
+	if (new_size == 0 && ptr)
 	{
 		free(ptr);
 		return (NULL);
@@ -98,7 +97,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 	new = _calloc(new_size, 1);
 	old = ptr;
-	if (new == NULL)
+	if (!new)
 		return (NULL);
 
 	if (new_size > old_size)
@@ -120,7 +119,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 /**
  * execute - executes a command
- * @argv: array of arguments
+ * @arv: array of arguments
  */
 void execute(char **arv)
 {

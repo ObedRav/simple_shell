@@ -14,6 +14,7 @@
 #include <stddef.h>
 #include <sys/stat.h>
 #include <signal.h>
+#include <setjmp.h>
 
 /**
  * The global variable environment
@@ -64,5 +65,7 @@ void free_list(list_path *head);
 void freearv(char **arv);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 void *_calloc(unsigned int nmemb, unsigned int size);
+
+static jmp_buf s_jumpBuffer;
 
 #endif
