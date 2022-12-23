@@ -55,7 +55,8 @@ int main(void)
 		_isatty(); /*Check if the input is interative or not interative*/
 		bytes_read = getline(&string, &size, stdin); /*Read the line from user*/
 		_EOF(bytes_read, string); /*If an error occured the program finish*/
-		arv = splitstring(string, " \n"); /*Split the string into an array*/
+		arv = splitstring(string, " \n");
+		free(string); /*Free the input from user*/ /*Split the string into an array*/
 		if (!arv || !arv[0])
 			execute(arv); /*Execute the args and return an error*/
 		else
@@ -63,6 +64,7 @@ int main(void)
 			value = _getenv("PATH"); /*Obtain the value from the environment variable*/
 			head = linkpath(value); /*Create an linked list of the path directories*/
 			pathname = _which(arv[0], head); /*Search if the command exits in paths*/
+			free_list(head); /*Free the linked list*/
 			f = checkbuild(arv); /*Check if the command is an buildin*/
 			if (f) /*If the command is an buildin free the input*/
 			{		/*from user and run the buildin*/
@@ -79,8 +81,5 @@ int main(void)
 			}
 		}
 	}
-	free_list(head); /*Free the linked list*/
-	freearv(arv); /*Free the array of input from user*/
-	free(string); /*Free the input from user*/
 	return (0);
 }

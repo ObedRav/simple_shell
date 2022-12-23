@@ -139,6 +139,7 @@ void execute(char **argv)
 		perror(argv[0]); /* if the execve failed error and exit*/
 		exit(EXIT_FAILURE);
 	}
+	freearv(argv); /*Free the array of input from user*/
 	wait(&status);
 }
 

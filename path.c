@@ -129,18 +129,22 @@ char *_which(char *filename, list_path *head)
 }
 
 /**
- * free_list - frees a list_t
- *@head: pointer to our linked list
+ * free_list -  function that frees a linked list.
+ * @head: the head of the linked lint
+ * Return: nothing
  */
 void free_list(list_path *head)
 {
-	list_path *storage;
+	list_path *actual;
 
-	while (head)
+	if (!head)
+		return;
+
+	while (head->p)
 	{
-		storage = head->p;
-		free(head->dir);
+		actual = head->p;
 		free(head);
-		head = storage;
+		head = actual;
 	}
+	free(head);
 }
