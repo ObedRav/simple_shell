@@ -5,7 +5,7 @@
  * @len: return value of getline function
  * @buff: buffer
  */
-void _EOF(int len, char *buff __attribute__ ((unused)))
+void _EOF(int len, __attribute__((unused))char *buff)
 {
 	if (len == -1)
 	{
@@ -47,7 +47,7 @@ int main(void)
 	char *string = NULL, *value = NULL, *pathname = NULL, **arv = NULL;
 	size_t size = 0;
 	list_path *head = '\0';
-	void (*f)(char **); /* Declare the store of the func*/
+	void (*f)(char **) = NULL; /* Declare the store of the func*/
 
 	signal(SIGINT, sig_handler); /*Signal be sure tat the user press the ctrl+c*/
 	while (1) /*Starting the infinitive loop*/
@@ -56,7 +56,6 @@ int main(void)
 		bytes_read = getline(&string, &size, stdin); /*Read the line from user*/
 		_EOF(bytes_read, string); /*If an error occured the program finish*/
 		arv = splitstring(string, " \n"); /*Split the string into an array*/
-		free(string);
 		if (!arv || !arv[0])
 			execute(arv); /*Execute the args and return an error*/
 		else
@@ -66,7 +65,7 @@ int main(void)
 			pathname = _which(arv[0], head); /*Search if the command exits in paths*/
 			free_list(head); /*Free the linked list*/
 			f = checkbuild(arv); /*Check if the command is an buildin*/
-			if (f) /*If the command is an buildin free the input*/
+			if (f) /*If the command is an buildin free the input*/	
 				f(arv); /*from user and run the buildin*/
 			else if (!pathname) /*If the _which don't found the executable*/
 				execute(arv);	/*in the paths, execute the command*/

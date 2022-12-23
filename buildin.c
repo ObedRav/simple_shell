@@ -60,6 +60,7 @@ void env(char **arv __attribute__ ((unused)))
 		_puts(environ[i]);
 		_puts("\n");
 	}
+	
 	freearv(arv);
 }
 
