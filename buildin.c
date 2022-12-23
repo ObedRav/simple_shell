@@ -7,10 +7,8 @@
  */
 int _atoi(char *s)
 {
-	int i, integer, sign = 1;
+	int i = 0, integer = 0, sign = 1;
 
-	i = 0;
-	integer = 0;
 	while (!((s[i] >= '0') && (s[i] <= '9')) && (s[i] != '\0'))
 	{
 		if (s[i] == '-')
@@ -33,7 +31,7 @@ int _atoi(char *s)
  */
 void exitt(char **arv)
 {
-	int i, n; /* declared variables */
+	int i = 0, n = 0; /* declared variables */
 
 	if (arv[1]) /* check if the user entered the status of exit */
 	{
@@ -56,7 +54,7 @@ void exitt(char **arv)
 */
 void(*checkbuild(char **arv))(char **arv)
 {
-	int i, j; /* declared variables */
+	int i = 0, j = 0; /* declared variables */
 	mybuild T[] = { /* structure of buildings */
 		{"exit", exitt},
 		{NULL, NULL}
@@ -64,7 +62,6 @@ void(*checkbuild(char **arv))(char **arv)
 
 	for (i = 0; T[i].name; i++) /* loop through the structure */
 	{
-		j = 0;
 		if (T[i].name[j] == arv[0][j]) /* check the first digit */
 		{
 			for (j = 0; arv[0][j]; j++) /* loop through the input */

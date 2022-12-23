@@ -8,8 +8,8 @@
  */
 char *_strdup(char *str)
 {
-	int i, l;
-	char *new;
+	int i = 0, l = 0;
+	char *new = NULL;
 
 	if (!str)
 		return (NULL);
@@ -35,8 +35,8 @@ char *_strdup(char *str)
  */
 char *concat_all(char *name, char *sep, char *value)
 {
-	char *result;
-	int l1, l2, l3, i, k;
+	char *result = NULL;
+	int l1 = 0, l2 = 0, l3 = 0, i = 0, k = 0;
 
 	l1 = _strlen(name);
 	l2 = _strlen(sep);

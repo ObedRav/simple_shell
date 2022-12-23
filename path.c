@@ -7,14 +7,13 @@
  */
 char *_getenv(const char *name)
 {
-	int i, j; /* declared variables */
-	char *value;
+	int i = 0, j = 0; /* declared variables */
+	char *value = NULL;
 
 	if (!name)
 		return (NULL);
 	for (i = 0; environ[i]; i++) /* loop through the environment variable */
 	{
-		j = 0;
 		if (name[j] == environ[i][j]) /* check the first digit */
 		{
 			while (name[j])
@@ -43,9 +42,8 @@ char *_getenv(const char *name)
 
 list_path *add_node_end(list_path **head, char *str)
 {
-
-	list_path *tmp;
-	list_path *new;
+	list_path *tmp = NULL;
+	list_path *new = NULL;
 
 	new = _calloc((sizeof(list_path)), 1);
 
@@ -85,7 +83,7 @@ list_path *add_node_end(list_path **head, char *str)
 list_path *linkpath(char *path)
 {
 	list_path *head = '\0'; /* declared variables */
-	char *token;
+	char *token = NULL;
 	char *cpath = _strdup(path); /* copy the path */
 
 	token = strtok(cpath, ":"); /* divide the path in tokens */
@@ -108,7 +106,7 @@ char *_which(char *filename, list_path *head)
 {
 	/* declared variables */
 	struct stat st;
-	char *string;
+	char *string = NULL;
 
 	list_path *tmp = head; /* create a copy of head */
 

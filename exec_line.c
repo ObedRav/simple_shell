@@ -8,10 +8,10 @@
  */
 char **splitstring(char *str, const char *delim)
 {
-	int i, wn; /* declared variables */
-	char **array;
-	char *token;
-	char *copy;
+	int i = 0, wn = 0; /* declared variables */
+	char **array = NULL;
+	char *token = NULL;
+	char *copy = NULL;
 
 	copy = _calloc((_strlen(str) + 1), 1); /* allocate the space in */
 	if (copy == NULL)					/*memory of the string received */
@@ -54,8 +54,8 @@ char **splitstring(char *str, const char *delim)
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	char *block;
-	unsigned int i;
+	char *block = NULL;
+	unsigned int i = 0;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
@@ -79,8 +79,8 @@ void *_calloc(unsigned int nmemb, unsigned int size)
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	char *new;
-	char *old;
+	char *new = NULL;
+	char *old = NULL;
 
 	unsigned int i;
 
@@ -125,7 +125,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 void execute(char **argv)
 {
 
-	int d, status; /* declared variables */
+	int d = 0, status; /* declared variables */
 
 	if (!argv || !argv[0])
 		return;
@@ -149,7 +149,7 @@ void execute(char **argv)
  */
 void freearv(char **arv)
 {
-	int i;
+	int i = 0;
 
 	for (i = 0; arv[i]; i++)
 		free(arv[i]);

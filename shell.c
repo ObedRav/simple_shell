@@ -5,9 +5,8 @@
  * @len: return value of getline function
  * @buff: buffer
  */
-void _EOF(int len, char *buff)
+void _EOF(int len, __attribute__((unused))char *buff)
 {
-	(void)buff;
 	if (len == -1)
 	{
 		if (isatty(STDIN_FILENO))
@@ -44,8 +43,8 @@ void sig_handler(int sig_num)
  */
 int main(void)
 {
-	int bytes_read; /*Declarations*/
-	char *string = NULL, *value, *pathname, **arv;
+	int bytes_read = 0; /*Declarations*/
+	char *string = NULL, *value = NULL, *pathname = NULL, **arv = NULL;
 	size_t size = 0;
 	list_path *head = '\0';
 	void (*f)(char **); /* Declare the store of the func*/
