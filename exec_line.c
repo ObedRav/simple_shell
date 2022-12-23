@@ -27,11 +27,11 @@ char **splitstring(char *str, const char *delim)
 	copy[i] = '\0';
 
 	token = strtok(copy, delim); /* Use the strtok to tokenize the string */
-	array = _calloc((sizeof(char *)), 2); /* Allocate memory for the array */
+	array = _calloc((sizeof(char *)), 1); /* Allocate memory for the array */
 	array[0] = _strdup(token); /* Copy the pointer of token into array */
 
 	i = 1; /* index */
-	wn = 3; /* variable to reallocate the memory */
+	wn = 2; /* variable to reallocate the memory */
 	while (token) /* Start the loop while token exits */
 	{
 		token = strtok(NULL, delim); /* Skip to the next token */
