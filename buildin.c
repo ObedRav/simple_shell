@@ -48,6 +48,23 @@ void exitt(char **arv)
 }
 
 /**
+ * env - prints the current environment
+ * @arv: array of arguments
+ */
+void env(char **arv __attribute__ ((unused)))
+{
+	int i;
+
+	for (i = 0; environ[i]; i++)
+	{
+		_puts(environ[i]);
+		_puts("\n");
+	}
+	
+	freearv(arv);
+}
+
+/**
 * checkbuild - checks if the command is a buildin
 * @arv: array of arguments
 * Return: pointer to function that takes arv and returns void
@@ -57,6 +74,7 @@ void(*checkbuild(char **arv))(char **arv)
 	int i = 0, j = 0; /* declared variables */
 	mybuild T[] = { /* structure of buildings */
 		{"exit", exitt},
+		{"env", env},
 		{NULL, NULL}
 	};
 

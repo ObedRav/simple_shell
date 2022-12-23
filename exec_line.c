@@ -122,11 +122,11 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
  * execute - executes a command
  * @argv: array of arguments
  */
-void execute(char **argv)
+void execute(char **arv)
 {
 	int d = 0, status; /* declared variables */
 
-	if (!argv || !argv[0])
+	if (!arv || !arv[0])
 		return;
 	d = fork(); /* fork the process */
 	if (d == -1) /* if the fork failed error*/
@@ -135,11 +135,11 @@ void execute(char **argv)
 	}
 	if (d == 0) /* if the fork succeeded execute the command */
 	{
-		execve(argv[0], argv, environ); /* replace the child process */
-			perror(argv[0]); /* if the execve failed error and exit*/
+		execve(arv[0], arv, environ); /* replace the child process */
+			perror(arv[0]); /* if the execve failed error and exit*/
 		exit(EXIT_FAILURE);
 	}
-	freearv(argv); /*Free the array of input from user*/
+	freearv(arv);
 	wait(&status);
 }
 

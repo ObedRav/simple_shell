@@ -5,7 +5,7 @@
  * @len: return value of getline function
  * @buff: buffer
  */
-void _EOF(int len, __attribute__((unused))char *buff)
+void _EOF(int len, char *buff __attribute__ ((unused)))
 {
 	if (len == -1)
 	{
