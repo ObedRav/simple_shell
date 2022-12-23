@@ -47,7 +47,7 @@ list_path *add_node_end(list_path **head, char *str)
 	list_path *tmp;
 	list_path *new;
 
-	new = malloc(sizeof(list_path));
+	new = _calloc((sizeof(list_path)), 1);
 
 	if (!new || !str)
 	{

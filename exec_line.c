@@ -13,7 +13,7 @@ char **splitstring(char *str, const char *delim)
 	char *token;
 	char *copy;
 
-	copy = malloc(_strlen(str) + 1); /* allocate the space in */
+	copy = _calloc((_strlen(str) + 1), 1); /* allocate the space in */
 	if (copy == NULL)					/*memory of the string received */
 	{
 		perror(_getenv("_"));
