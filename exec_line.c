@@ -120,7 +120,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 /**
  * execute - executes a command
- * @argv: array of arguments
+ * @arv: array of arguments
  */
 void execute(char **arv)
 {
