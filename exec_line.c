@@ -28,7 +28,7 @@ char **splitstring(char *str, const char *delim)
 	copy[i] = '\0';
 
 	token = strtok(copy, delim); /* Use the strtok to tokenize the string */
-	array = malloc((sizeof(char *) * 2)); /* Allocate memory for the array */
+	array = _calloc((sizeof(char *)), 2); /* Allocate memory for the array */
 	array[0] = _strdup(token); /* Copy the pointer of token into array */
 
 	i = 1;
@@ -46,6 +46,31 @@ char **splitstring(char *str, const char *delim)
 }
 
 /**
+ * _calloc - allocates memory using malloc, and initializes it to zero
+ * @size: size of the memory block to be allocated
+ * @nmemb: number of elements
+ *
+ * Return: pointer to the address of the memory block
+ */
+void *_calloc(unsigned int nmemb, unsigned int size)
+{
+	char *block;
+	unsigned int i;
+
+	if (nmemb == 0 || size == 0)
+		return (NULL);
+	block = malloc(nmemb * size);
+	if (block != NULL)
+	{
+		for (i = 0; i < (nmemb * size); i++)
+			block[i] = 0;
+		return (block);
+	}
+	else
+		return (NULL);
+}
+
+/**
  * _realloc - Reallocates memory block
  * @ptr: previous pointer
  * @old_size: old size of previous pointer
@@ -60,7 +85,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	unsigned int i;
 
 	if (ptr == NULL)
-		return (malloc(new_size));
+		return (_calloc(new_size, 1));
 
 	if (new_size == old_size)
 		return (ptr);
@@ -71,7 +96,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return (NULL);
 	}
 
-	new = malloc(new_size);
+	new = _calloc(new_size, 1);
 	old = ptr;
 	if (new == NULL)
 		return (NULL);
