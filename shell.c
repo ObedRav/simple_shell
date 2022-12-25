@@ -53,6 +53,7 @@ int main(void)
 	while (1) /*Starting the infinitive loop*/
 	{
 		_isatty(); /*Check if the input is interative or not interative*/
+		fflush(stdin);
 		bytes_read = getline(&string, &size, stdin); /*Read the line from user*/
 		_EOF(bytes_read, string); /*If an error occured the program finish*/
 		arv = splitstring(string, " \n"); /*Split the string into an array*/
@@ -77,5 +78,8 @@ int main(void)
 		else
 			freearv(arv);
 	}
+	free_list(head);
+	freearv(arv);
+	free(string);
 	return (0);
 }
