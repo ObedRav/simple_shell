@@ -105,5 +105,5 @@ No known bugs.
 
 
 ## Authors
-* **Obed Rayo** [Github]()
+* **Obed Rayo** [Github](https://github.com/ObedRav)
 * **Maria Jose Murillo R.** [Github]()
